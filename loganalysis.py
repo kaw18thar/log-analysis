@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import psycopg2
 
 
@@ -40,7 +41,7 @@ query_3 = '''
     CREATE VIEW fratedays AS
     SELECT DATE(time) AS days, status,
     COUNT(*) * 100 / SUM(COUNT(*)) OVER() AS frate
-    FROM log WHERE status != '200 OK'
+    FROM log WHERE status != '200 OK' AND DATE(time) = DATE(time)
     GROUP BY status, DATE(time) ORDER BY frate;
     SELECT frate, days FROM fratedays
     WHERE frate >= 1 ORDER BY frate DESC;
