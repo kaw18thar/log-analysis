@@ -11,7 +11,7 @@ first you need to have installed [Python](https://www.python.org) and [Psycopg2 
 \ `log-analysis-dir`
   --vagrant file
   --`log-analysis-project`
-* Go to `log-analysis-project` folder or `cd` to it in your terminal. Here, create the loganalysis.py file and download and unzip the newsdata database file. Now your project folder should look like this: 
+* Go to `log-analysis-project` folder or `cd` to it in your terminal. Here, create the loganalysis.py file and download and unzip the [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) database file. Now your project folder should look like this: 
 \ `log-analysis-dir`
   --vagrant file
   --`log-analysis-project`
