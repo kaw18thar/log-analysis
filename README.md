@@ -19,11 +19,11 @@ first you need to have installed [Python](https://www.python.org) and [Psycopg2 
  <dd>//------ newsdata.sql </dd>
  <dd>//------ loganalysis.py </dd>
 * Go to `log-analysis-dir` folder and git bash there, run these commands:
-  1. `vagrant up` and wait till the virtual machine is created. 
-  2. Then `vagrant ssh`, which will make the terminal prompt turn into something like: `vagrant@vagrant:`.
-  3. Then, `cd /vagrant`, which will take us to the directory shared between the virtual machine and our computer.
-  4. Here, we use `cd log-analysis-project` command and run our python file which contains our code using `python loganalysis.py`
-  5. Now, we should see the output of these three SQL queries run against the news database:
+1. `vagrant up` and wait till the virtual machine is created. 
+2. Then `vagrant ssh`, which will make the terminal prompt turn into something like: `vagrant@vagrant:`.
+3. Then, `cd /vagrant`, which will take us to the directory shared between the virtual machine and our computer.
+4. Here, we use `cd log-analysis-project` command and run our python file which contains our code using `python loganalysis.py`
+5. Now, we should see the output of these three SQL queries run against the news database:
     1. What are the most popular three articles of all time? 
     2. Who are the most popular article authors of all time? 
     3. On which days did more than 1% of requests lead to errors? 
