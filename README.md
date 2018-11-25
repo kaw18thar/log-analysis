@@ -12,11 +12,12 @@ first you need to have installed [Python](https://www.python.org) and [Psycopg2 
   --vagrant file
   --`log-analysis-project`
 * Go to `log-analysis-project` folder or `cd` to it in your terminal. Here, create the loganalysis.py file and download and unzip the [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) database file. Now your project folder should look like this: 
-\ `log-analysis-dir`
-  --vagrant file
-  --`log-analysis-project`
-     -- newsdata.sql
-     -- loganalysis.py
+<dl>
+  <code>/log-analysis-dir</code> 
+ <dt> vagrant file </dt> 
+  <dt><code>//log-analysis-project</code></dt>
+ <dd>------ newsdata.sql </dd>
+ <dd>------ loganalysis.py </dd>
 * Go to `log-analysis-dir` folder and git bash there, run these commands:
   1. `vagrant up` and wait till the virtual machine is created. 
   2. Then `vagrant ssh`, which will make the terminal prompt turn into something like: `vagrant@vagrant:`.
