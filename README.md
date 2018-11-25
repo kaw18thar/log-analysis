@@ -2,7 +2,7 @@
 ## How to run this file:
 ### Prerequisits:
 first you need to have installed [Python](https://www.python.org) and [Psycopg2 v2.7.5](http://initd.org/psycopg/download/) to deal with PostgreSQL.
-1. download and install vagrant [version 1.9.5 is the one that works without problems](https://releases.hashicorp.com/vagrant/1.9.5/]
+1. download and install vagrant [version 1.9.5 is the one that works without problems](https://releases.hashicorp.com/vagrant/1.9.5/)
 2. download and install virtual box [version 5.2.](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
 3. download and install postgreSQL [version 9.5](https://www.postgresql.org/download/) 
 ### Instructions:
