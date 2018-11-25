@@ -5,5 +5,5 @@ in your vagrant terminal type `python loganalysis.py` and you should see the out
 2. Who are the most popular article authors of all time? 
 3. On which days did more than 1% of requests lead to errors? 
 
-## Special thanks to the writer of this Stack Overflow answe:
+## Special thanks to the writer of this Stack Overflow answer:
 [How to calculate percentage with a SQL statement](https://stackoverflow.com/a/772439)
