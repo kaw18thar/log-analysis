@@ -8,7 +8,7 @@ def queries_SQL(question_num, query):
     results = c.fetchall()
     print("The solution for question number ", question_num, " is: ")
     for result in results:
-        print("{}".format(result))
+        print("{}".format(result[0]), "{}".format(result[1]))
     db.close()
 
 
