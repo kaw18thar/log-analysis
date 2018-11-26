@@ -31,15 +31,7 @@ query_1 = '''
     GROUP BY log.path,  articles.title
     ORDER BY views DESC LIMIT 3;
     '''
-
-
 query_2 = '''
-    CREATE view AuthorsVa AS
-    SELECT articles.author, articles.title,
-    COUNT(*) AS views FROM log, articles
-    WHERE articles.slug = SUBSTRING(log.path FROM 10)
-    GROUP BY log.path, articles.title, articles.author
-    ORDER BY views;
     SELECT authors.name, AuthorsVa.views,
     SUM(views) AS totalviews
     FROM AuthorsVa, authors
@@ -48,14 +40,7 @@ query_2 = '''
     AuthorsVa.views
     ORDER BY totalviews DESC;
     '''
-
-
 query_3 = '''
-    CREATE VIEW fratedays AS
-    SELECT DATE(time) AS days, status,
-    COUNT(*) * 100 / SUM(COUNT(*)) OVER() AS frate
-    FROM log WHERE status != '200 OK' AND DATE(time) = DATE(time)
-    GROUP BY status, DATE(time) ORDER BY frate;
     SELECT ROUND(frate, 2), days FROM fratedays
     WHERE frate >= 1 ORDER BY frate DESC;
     '''
