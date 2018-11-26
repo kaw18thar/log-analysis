@@ -1,4 +1,4 @@
- python loganalysis.py
+vagrant@vagrant:/vagrant/log-analysis-project$ python loganalysis.py
 
 
 1. What are the most popular three articles of all time?
