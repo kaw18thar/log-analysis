@@ -1,10 +1,14 @@
+
 # sql-log-analysis
+
 ## How to run this file:
+
 ### Prerequisits:
 first you need to have installed [Python](https://www.python.org) and [Psycopg2 v2.7.5](http://initd.org/psycopg/download/) to deal with PostgreSQL.
 1. download and install vagrant [version 1.9.5](https://releases.hashicorp.com/vagrant/1.9.5/) is the one that works without problems
 2. download and install virtual box [version 5.2.](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
 3. download and install postgreSQL [version 9.5](https://www.postgresql.org/download/) 
+
 ### Instructions:
 * Create an empty folder to hold your project folders and files; name this folder `log-analysis-dir`. Inside `log-analysis-dir` download the vagrant file (https://goo.gl/wLBxDA). Create another folder named `log-analysis-project` and place it next to the vagrant file inside the `log-analysis-dir` this folder will share files with the virtual machine.
 * Until now, our project folder should look like this:
