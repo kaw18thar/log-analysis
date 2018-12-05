@@ -36,7 +36,7 @@ query_2 = '''
     SUM(views) AS totalviews
     FROM AuthorsVa, authors
     WHERE AuthorsVa.author=authors.id
-    GROUP BY AuthorsVa.author, authors.id, authors.name,
+    GROUP BY AuthorsVa.author, authors.name,
     AuthorsVa.views
     ORDER BY totalviews DESC;
     '''
