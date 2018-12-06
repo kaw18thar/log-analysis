@@ -32,12 +32,14 @@ query_1 = '''
     ORDER BY views DESC LIMIT 3;
     '''
 query_2 = '''
-    SELECT authors.name, AuthorsVa.author,
+    CREATE VIEW totals AS
+    SELECT authors.name AS name, AuthorsVa.author,
     SUM(views) AS totalviews
     FROM AuthorsVa, authors
     WHERE AuthorsVa.author=authors.id
-    GROUP BY AuthorsVa.views, authors.name, AuthorsVa.author
+    GROUP BY authors.name, AuthorsVa.author
     ORDER BY totalviews DESC;
+    SELECT name, totalviews from totals;
     '''
 query_3 = '''
     SELECT ROUND(frate, 2), days FROM fratedays
