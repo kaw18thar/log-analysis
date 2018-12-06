@@ -34,10 +34,10 @@ Go to `log-analysis-dir` folder and git bash there, run these commands:
 - use the command `psql -d news -f newsdata.sql` and then `psql -d news` to connect to the news database. Note: we can skip to the command `psql -d news` directly once we have already connected to the database.
 - run this code to create  views  necessary to run our loganalysis python app: <br> `psql -d news -f views.sql`
 <code> 
-vagrant@vagrant:/vagrant/log-analysis$ psql -d news -f views.sql
-CREATE VIEW
-CREATE VIEW
-</code>
+vagrant@vagrant:/vagrant/log-analysis$ psql -d news -f views.sql</code>
+<code> CREATE VIEW</code>
+<code> CREATE VIEW</code>
+
        
 - Now run our python file which contains our code using `python loganalysis.py`
 - We should see the output of these three SQL queries run against the news database:
