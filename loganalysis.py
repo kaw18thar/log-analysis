@@ -32,12 +32,11 @@ query_1 = '''
     ORDER BY views DESC LIMIT 3;
     '''
 query_2 = '''
-    SELECT authors.name, AuthorsVa.views,
+    SELECT authors.name, AuthorsVa.author,
     SUM(views) AS totalviews
     FROM AuthorsVa, authors
-    WHERE AuthorsVa.author=AuthorsVa.author
-    GROUP BY authors.name,
-    AuthorsVa.views
+    WHERE AuthorsVa.author=authors.id
+    GROUP BY AuthorsVa.author, totalviews, authors.name
     ORDER BY totalviews DESC;
     '''
 query_3 = '''
