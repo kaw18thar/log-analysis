@@ -51,7 +51,7 @@ query_3 = '''
     FROM log WHERE  DATE(time) = DATE(time) AND status != '200 OK'
     GROUP BY DATE(time);      
     SELECT ROUND(failedlogs.failed * 100/fratedays2.alllogs , 2) AS errors , fratedays2.days FROM fratedays2, failedlogs GROUP BY fratedays2.days, errors 
-    WHERE failedlogs.days = fratedays2.days;
+    HAVING failedlogs.days = fratedays2.days;
     '''
 
 if __name__ == '__main__':
