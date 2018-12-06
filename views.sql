@@ -13,6 +13,6 @@ GROUP BY authors.name, AuthorsVa.author
 ORDER BY totalviews DESC;
 
 CREATE VIEW fratedays AS 
-SELECT DATE(time) AS days, status, COUNT(*) * 100 / SUM(COUNT(*)) OVER() AS frate 
-FROM log WHERE status != '200 OK' AND DATE(time) = DATE(time) 
-GROUP BY status, DATE(time) ORDER BY frate; 
+SELECT DATE(time) AS days, status, COUNT(*) AS alllogs 
+FROM log WHERE  DATE(time) = DATE(time) 
+GROUP BY status, DATE(time); 
