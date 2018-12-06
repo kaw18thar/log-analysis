@@ -32,30 +32,12 @@ Go to `log-analysis-dir` folder and git bash there, run these commands:
 - Then, `cd /vagrant`, which will take us to the directory shared between the virtual machine and our computer.
 - Here, we use `cd log-analysis-project` command 
 - use the command `psql -d news -f newsdata.sql` and then `psql -d news` to connect to the news database. Note: we can skip to the command `psql -d news` directly once we have already connected to the database.
-- run these two SQL select statements necessary to run our loganalysis python app: <br>
-`    CREATE view AuthorsVa AS
-    SELECT articles.author, articles.title,
-    COUNT(*) AS views FROM log, articles
-    WHERE articles.slug = SUBSTRING(log.path FROM 10)
-    GROUP BY log.path, articles.title, articles.author
-    ORDER BY views;`  <br>
-and  <br>
-``
-    CREATE VIEW fratedays AS
-    SELECT DATE(time) AS days, status,
-    COUNT(*) * 100 / SUM(COUNT(*)) OVER() AS frate
-    FROM log WHERE status != '200 OK' AND DATE(time) = DATE(time)
-    GROUP BY status, DATE(time) ORDER BY frate;``  <br>
-    now we can see that there are two views created by vagrant in our terminal:  <br>
-    ```
-      news=> \dv
-                List of relations
-       Schema |   Name    | Type |  Owner
-      --------+-----------+------+---------
-       public | authorsva | view | vagrant
-       public | fratedays | view | vagrant
-      (2 rows)
-       ```  
+- run this code to create  views  necessary to run our loganalysis python app: <br> `psql -d news -f views.sql`
+<code> 
+vagrant@vagrant:/vagrant/log-analysis$ psql -d news -f views.sql
+CREATE VIEW
+CREATE VIEW
+</code>
        
 - Now run our python file which contains our code using `python loganalysis.py`
 - We should see the output of these three SQL queries run against the news database:
