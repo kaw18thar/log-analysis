@@ -19,7 +19,7 @@ def queries_SQL(question_num, query):
         print('\n\n')
         print("3. On which days did more than 1% of requests lead to errors?")
         for result in results:
-            print("on {day} there was {errors} % errors".format(day = result[1], errors = result[0]))
+            print("on {day} there was {errors} % errors".format(day = result[0], errors = result[1]))
     else:
         print("Wrong question no. please revise your code. ")
     db.close()
@@ -50,15 +50,19 @@ query_3 = '''
     SELECT DATE(time) AS days, COUNT(status) AS failed 
     FROM log WHERE  DATE(time) = DATE(time) AND status != '200 OK'
     GROUP BY DATE(time);      
-    SELECT ROUND(failedlogs.failed * 100/fratedays2.alllogs , 2) AS errors , fratedays2.days FROM fratedays2, failedlogs GROUP BY fratedays2.days, errors 
+    SELECT ROUND(failedlogs.failed * 100/fratedays2.alllogs , 2) AS errors , fratedays2.days FROM fratedays2, failedlogs GROUP BY fratedays2.days, failedlogs.days, errors 
     HAVING failedlogs.days = fratedays2.days;
     '''
+query3_extra = '''
+    SELECT  SUM(sumstatus) , day FROM ( SELECT to_char(time, 'Month dd, yyyy') as day, status, count(*) as sumstatus from log WHERE to_char(time, 'Month dd, yyyy')  = to_char(time, 'Month dd, yyyy') 
+       GROUP BY to_char(time, 'Month dd, yyyy'), status )AS ratio WHERE day = day group by  ratio.day ; 
 
+'''
 if __name__ == '__main__':
     # code goes here
     queries_SQL(1, query_1)
     queries_SQL(2, query_2)
-    queries_SQL(3, query_3)
+    queries_SQL(3, query3_extra)
 
 else:
     print('Import')
