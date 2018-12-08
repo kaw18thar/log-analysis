@@ -12,7 +12,15 @@ WHERE AuthorsVa.author=authors.id
 GROUP BY authors.name, AuthorsVa.author
 ORDER BY totalviews DESC;
 
-CREATE VIEW fratedays AS 
-SELECT DATE(time) AS days, status, COUNT(*) AS alllogs 
-FROM log WHERE  DATE(time) = DATE(time) 
-GROUP BY status, DATE(time); 
+
+CREATE VIEW ratio AS
+SELECT to_char(time, 'Month dd, yyyy') as day,
+status, count(*) AS sumstatus
+FROM log
+WHERE to_char(time, 'Month dd, yyyy') = to_char(time, 'Month dd, yyyy')
+GROUP BY to_char(time, 'Month dd, yyyy'), status;
+
+CREATE VIEW errorlogs as
+SELECT  SUM(sumstatus) AS alllogs, day FROM ratio
+WHERE day = day group by  ratio.day ;
+

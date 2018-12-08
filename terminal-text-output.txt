@@ -1,53 +1,19 @@
-vagrant@vagrant:/vagrant/log-analysis-project$ python loganalysis.py
+vagrant@vagrant:/vagrant/log-analysis$ python loganalysis.py
 
 
 1. What are the most popular three articles of all time?
-('Candidate is jerk, alleges rival', '338647', ' views')
-('Bears love berries, alleges bear', '253801', ' views')
-('Bad things gone, say good people', '170098', ' views')
+Candidate is jerk, alleges rival-- 338647 views
+Bears love berries, alleges bear-- 253801 views
+Bad things gone, say good people-- 170098 views
 
 
 2. Who are the most popular article authors of all time?
-('Rudolf von Treppenwitz', '338647', ' views')
-('Ursula La Multa', '253801', ' views')
-('Anonymous Contributor', '170098', ' views')
-('Ursula La Multa', '84906', ' views')
-('Rudolf von Treppenwitz', '84810', ' views')
-('Markoff Chaney', '84557', ' views')
-('Ursula La Multa', '84504', ' views')
-('Ursula La Multa', '84383', ' views')
+Ursula La Multa -- 507594 views
+Rudolf von Treppenwitz -- 423457 views
+Anonymous Contributor -- 170098 views
+Markoff Chaney -- 84557 views
 
 
 
 3. On which days did more than 1% of requests lead to errors?
-('2016-07-17', '9.80', '% errors')
-('2016-07-19', '3.35', '% errors')
-('2016-07-24', '3.34', '% errors')
-('2016-07-05', '3.28', '% errors')
-('2016-07-06', '3.25', '% errors')
-('2016-07-21', '3.24', '% errors')
-('2016-07-08', '3.24', '% errors')
-('2016-07-09', '3.18', '% errors')
-('2016-07-15', '3.16', '% errors')
-('2016-07-22', '3.15', '% errors')
-('2016-07-11', '3.12', '% errors')
-('2016-07-03', '3.11', '% errors')
-('2016-07-30', '3.08', '% errors')
-('2016-07-26', '3.07', '% errors')
-('2016-07-28', '3.04', '% errors')
-('2016-07-25', '3.03', '% errors')
-('2016-07-02', '3.01', '% errors')
-('2016-07-20', '2.97', '% errors')
-('2016-07-14', '2.97', '% errors')
-('2016-07-13', '2.97', '% errors')
-('2016-07-29', '2.96', '% errors')
-('2016-07-04', '2.94', '% errors')
-('2016-07-16', '2.90', '% errors')
-('2016-07-18', '2.90', '% errors')
-('2016-07-12', '2.89', '% errors')
-('2016-07-23', '2.89', '% errors')
-('2016-07-10', '2.87', '% errors')
-('2016-07-27', '2.84', '% errors')
-('2016-07-07', '2.79', '% errors')
-('2016-07-31', '2.55', '% errors')
-('2016-07-01', '2.12', '% errors')
+on July      17, 2016 there was 2.26 % errors
