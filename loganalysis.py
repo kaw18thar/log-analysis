@@ -10,7 +10,7 @@ def queries_SQL(question_num, query):
     if question_num == 1:
         print("\n\n1. What are the most popular three articles of all time?")
         for result in results:
-            print("{article}-- {views1} views"
+            print("{article} -- {views1} views"
                   .format(article=result[0], views1=result[1]))
     elif question_num == 2:
         print("\n\n2. Who are the most popular article authors of all time?")
@@ -48,7 +48,6 @@ query3_extra = '''
 '''
 
 if __name__ == '__main__':
-    # code goes here
     queries_SQL(1, query_1)
     queries_SQL(2, query_2)
     queries_SQL(3, query3_extra)

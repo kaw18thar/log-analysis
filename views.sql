@@ -1,7 +1,7 @@
 
 CREATE view AuthorsVa AS 
 SELECT articles.author, articles.title, COUNT(*) AS views 
-FROM log, articles WHERE articles.slug = SUBSTRING(log.path FROM 10) AND  articles.author =  articles.author
+FROM log, articles WHERE articles.slug = SUBSTRING(log.path FROM 10)
 GROUP BY log.path, articles.title, articles.author ORDER BY views; 
 
 CREATE VIEW totals AS
@@ -14,13 +14,13 @@ ORDER BY totalviews DESC;
 
 
 CREATE VIEW ratio AS
-SELECT to_char(time, 'Month dd, yyyy') as day,
+SELECT time::date AS day,
 status, count(*) AS sumstatus
 FROM log
-WHERE to_char(time, 'Month dd, yyyy') = to_char(time, 'Month dd, yyyy')
-GROUP BY to_char(time, 'Month dd, yyyy'), status;
+--WHERE to_char(time, 'Month dd, yyyy') = to_char(time, 'Month dd, yyyy')
+GROUP BY day, status;
 
 CREATE VIEW errorlogs as
 SELECT  SUM(sumstatus) AS alllogs, day FROM ratio
-WHERE day = day group by  ratio.day ;
+GROUP BY  ratio.day ;
 
