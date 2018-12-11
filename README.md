@@ -51,9 +51,10 @@ CREATE VIEW
  
  
 ## Views created to handle the database:
-* `AuthorsVa`: this view summs the number of views for each article belongs to every author the news database have. We make use of this view to sum all the views for all articles that are written by each author.
-* `fratedays`: this view sums the failure rates of each day alone( i.e. how many http requests did not get the '200 OK' success response.
-
+* `AuthorsVa`: this view summs the number of views for each article belongs to every author the news database have. We make use of this view to sum all the views for each article that is written by each author.
+* `totals`: this view sums up the total views for all the articles wrtten by each author. This view actually answers the question number 2. 
+* `ratio`: this view sums the logs of each day grouped by status( i.e. how many http requests did the website had at each day that were '200 OK' success response and how many that were '400 NOT FOUND' failure response).
+* `errorlogs`: this view sums up all th logs for each day no matter what its status were. We will use this sum to devide the number of failure responses for that day by it, to get the ratio of faliure for each day alone.
 
 ## Special thanks to the writer of this Stack Overflow answer:
 [How to calculate percentage with a SQL statement](https://stackoverflow.com/a/772439)
