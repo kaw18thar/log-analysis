@@ -37,6 +37,8 @@ Go to `log-analysis-dir` folder and git bash there, run these commands:
 vagrant@vagrant:/vagrant/log-analysis$ psql -d news -f views.sql
 CREATE VIEW
 CREATE VIEW
+CREATE VIEW
+CREATE VIEW
 ```
 
        
